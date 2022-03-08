@@ -3,9 +3,11 @@
     --primary-color: rgb(20, 19, 19);
     --destription-color: rgb(42, 26, 26);
     --hover-color: rgb(35, 33, 177);
+    --header-color: rgb(235, 220, 220);
     --font-size: 19px;
     --font-size-s: 14px;
     --font-family: 'Ubuntu', sans-serif;
+
 }
 /* font size ustala wielkość el. tekstu na stronie, podanie go w html tag,
  powoduje, że każdy el. na stonie ma font size równy 19px*/
@@ -54,4 +56,31 @@ body {
 /* pseudoklasa hover odpowiada za wyświetlanie linku po najechaniu */
 .list-link:hover {
     color: var(--hover-color);
+}
+
+/* koniec stylowania nav*/
+
+/* 
+background-size: cover; dopasowuje podane zdjecie do szerokości max kontenra w którym się znajduje
+ height: 80vh; ustala wyskokoć na 80% wyskości okna przeglądarki, bez wzgledu na ekra na który, 
+ position: relative; jest ustawieni nadrzędności class header-bg nad dzieckiem tj. class header-text
+*/
+.header-bg {
+    height: 80vh;
+    background-image: url(sunset-g3ec1f9d5e_1920.jpg);
+    background-size: cover;
+    position: relative;
+}
+.header-text {
+    position: absolute;
+    color: var(--hover-color);
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding: 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.header-text--span {
+    color: var(--destription-color);
 }
