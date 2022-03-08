@@ -1,0 +1,8 @@
+/* dodawnie zminnych do CSS, dzieki czemu łatwo zarządzamy nasza aplikacją kolejność nie ma znaczenia. Ważne żeby był na początku pliku */
+:root {
+    --primary-color: rgb(20, 19, 19);
+    --destription-color: rgb(42, 26, 26);
+    --font-family : 'Roboto' sans-serif;
+    --font-size: 18px;
+    --font-size-s: 14px;
+}
