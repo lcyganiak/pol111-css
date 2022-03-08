@@ -71,6 +71,13 @@ background-size: cover; dopasowuje podane zdjecie do szerokości max kontenra w 
     background-size: cover;
     position: relative;
 }
+/*
+position: absolute; el.  class header-text jest wpełni zależny od class header-bg
+dostajemy mozliwość manipulacji left, top. rigth, botom dzięki czemu mozmy ustawić w header-bg 
+nasza class eader-text  gdzie chemy
+transform: translate(-50%, -50%); przesunięcie według orgina;lnej osi x,y o 50 procent ( własnej szerokości )
+o -50% w lewo i -50% w górę
+*/
 .header-text {
     position: absolute;
     color: var(--hover-color);
@@ -83,4 +90,17 @@ background-size: cover; dopasowuje podane zdjecie do szerokości max kontenra w 
 }
 .header-text--span {
     color: var(--destription-color);
+}
+
+/* koniec headera */
+
+.section-skils {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.skils-best {
+    grid-column: 2/5;
 }
