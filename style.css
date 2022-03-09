@@ -34,6 +34,9 @@ body {
     text-align: center;
 
 }
+
+
+
 .main-nav{
     height: 70px;
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(106,75,37,0.44021358543417366) 100%);
@@ -67,9 +70,8 @@ background-size: cover; dopasowuje podane zdjecie do szerokości max kontenra w 
 */
 .header-bg {
     height: 80vh;
-    background-image: url(sunset-g3ec1f9d5e_1920.jpg);
-    background-size: cover;
-    position: relative;
+    background: rgb(0,0,0);
+    background: linear-gradient(207deg, rgba(0,0,0,1) 8%, rgba(255,255,255,1) 66%);
 }
 /*
 position: absolute; el.  class header-text jest wpełni zależny od class header-bg
@@ -91,16 +93,133 @@ o -50% w lewo i -50% w górę
 .header-text--span {
     color: var(--destription-color);
 }
+.header-text--paragraf:hover {
+    color: yellowgreen;
+    cursor: pointer;
+}
 
 /* koniec headera */
 
 .section-skils {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 100%;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
 }
-.skils-best {
-    grid-column: 2/5;
+
+
+.skil-title-aniamation1:hover {
+    animation: changeColor 2000ms linear 500ms normal forwards;
+}
+.skil-title-aniamation2:hover {
+    animation: changeColor 2000ms linear 500ms normal forwards;
+}
+.skil-title-aniamation3:hover {
+    animation: changeColor 2000ms linear 500ms normal forwards;
+}
+.skil-title-aniamation4:hover {
+    animation: changeColor 2000ms linear 500ms normal forwards;
+}
+.skil-title-aniamation5:hover {
+    animation: changeColor 2000ms linear 500ms normal forwards;
+}
+.skil-title-aniamation6:hover {
+    animation: changeColor 2000ms linear 500ms normal forwards;
+}
+
+/*animacja */
+@keyframes changeColor {
+    0% {
+        color: var(--primary-color);
+    }
+    25% {
+        color: rgb(120, 19, 19);;
+    }
+    50% {
+        color: rgb(220, 19, 19);;
+    }
+    100% {
+        color: rgb(255, 200, 100);;
+    }
+}
+/* animacje od fontawesome*/
+/* .section-skils > div:hover .skil-icon {
+    -webkit-animation: fa-spin 1s infinite linear;
+    -moz-animation: fa-spin 1s infinite linear;
+    -o-animation: fa-spin 1s infinite linear;
+    animation: fa-spin 1s infinite linear;
+} */
+.menu-mobile {
+    width: 50px;
+
+}
+/* w class skil-icon znajduje sie tag <i>
+transition-duration: 2s; w przypadku zminy wyglądu na :hover czas przejścia będzie 2 sekundy
+*/
+.skil-icon i {
+    color: var(--hover-color);
+    transition-duration: 2s;
+}
+.skil-icon i:hover {
+    animation: zoomAndRotate 2000ms linear;
+}
+
+@keyframes zoomAndRotate {
+
+    0% {
+
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(3) rotate(360deg);
+   
+    }
+       
+        
+}
+/* cała zawartość ul z nasza nawigacją jest nie widoczna chyba że ekran 
+jest szerszy nic 670px*/
+.list {
+    display: none;
+}
+/*@media (min-width: 680px) wszystko co jest w nawiasach klamrowych zrobi się na widokach 
+powyżej 680px szerokości */
+@media (min-width: 680px) {
+    .list {
+        display: block;
+    }
+    .menu-mobile {
+        display: none;
+        
+    }
+    .section-skils {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}
+/*@media (min-width: 992px) wszystko co jest w nawiasach klamrowych zrobi się na widokach 
+powyżej 992px szerokości */
+@media (min-width: 992px) {
+    .section-skils {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .skils-best {
+        grid-column: 2/5;
+    }
+    .header-bg {
+        height: 80vh;
+        background-image: url(sunset-g3ec1f9d5e_1920.jpg);
+        background-size: cover;
+        position: relative;
+    }
 }
