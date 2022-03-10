@@ -34,4 +34,35 @@ const wynika = add(true, false) // true === 1 false === 0
 
 const example = 'Udostępniasz swój ekran'
 
-console.log('długość string', example.length)
+console.log('długość string', example.length) // zwraca 23 
+console.log('czy wartość ępni występuje w naszym przykładzie ', example.includes('ępni')) // true
+console.log('czy wartość java występuje w naszym przykładzie ', example.includes('java')) // false
+
+console.log('gdzie zaczyna się ępni', example.indexOf('ępni')) 
+console.log('gdzie zaczyna się java', example.indexOf('java')) 
+
+const exampleArr = example.split('')
+console.log(exampleArr)
+const xd = "Billennium" // 'muinnelliB'
+
+const prawieLiczba = '3E8'
+console.log(parseInt(prawieLiczba)) // zwróci 3 xd :)
+
+const zminnoprzecinkowa = 555.785858745
+
+console.log(zminnoprzecinkowa.toFixed(2)) // 555.79
+console.log(zminnoprzecinkowa.toLocaleString('ja-JP', {style:'currency', currency: "JPY" })) // ￥556
+
+if(xd === "Billennium" ) {
+    console.log("Fajna firma")
+} else {
+    console.log("sii też jest spoko")
+}
+
+xd === "Billennium" ? console.log("Fajna firma") : console.log("sii też jest spoko")
+
+""
+''
+``
+
+const oo = "Jan powiedział że: 'lubi koty'"
