@@ -20,6 +20,10 @@ h1, h2, h3, h4, h5,p, ul {
 
     /*  Making ul.menu a Flex container  */
     display: flex;
+    /* ustawienie podstawowe */
+    /* flex-wrap: nowrap; */
+    /* ustawinie, że jak nie mam miejsca to łamie do drugiej lini*/
+    flex-wrap: wrap;
 }
 
 .menu>.item:not(:last-child) {
@@ -56,11 +60,11 @@ h1, h2, h3, h4, h5,p, ul {
 
 .flex-container {
    display: flex;
-    /*  flex-direction: column;  */
+     /* flex-direction: column;  */
     /* główna oś staje się pionowa, zaczynając od góry i kończąc na dole. */
     /* flex-direction: row;  */
     /* domyslna wartośc */
-    /* flex-direction: row-reverse;  */
+    flex-direction: row-reverse; 
     /* odwraca kolejność */
     /* flex-direction: column-reverse; */
     /*odwraca kolejność  w kolumnie */
@@ -78,9 +82,9 @@ h1, h2, h3, h4, h5,p, ul {
     /*elementy są wyśrodkowane na osi.*/
     /* justify-content: space-between; */
     /*elementy są równomiernie rozmieszczone na głównej osi. Pierwszy element jest ustawiony na początku osi, a ostatni na końcu.*/
-    /* justify-content: space-around; */
+    justify-content: space-around;
     /* elementy są rozmieszczone równomiernie, ale lewy i prawy element pozostają w tyle za granicami kontenera o połowę odstępu między innymi elementami.*/
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     /*elementy są rozmieszczone w taki sposób, aby odległość między elementami i od elementów krawędziowych do granic kontenera była taka sama.*/
 
     /* align-items */
@@ -163,12 +167,13 @@ img {
 
     margin-left: 10px;
     margin-top: 10px;
-
-    flex-basis: calc((100% - 30px) / 3);
+    width: 21%;
+    /* flex-basis: calc((100% - 30px) / 5); */
     /*właściwość flex-basis ma pierwszeństwo przed właściwością width oraz właściwością height 
     Za pomocą właściwości flex-basis możemy określić rozmiar główny obszaru zawartości interesującego nas elementu dziecka elementu HTML tworzącego układ elastyczny.
     */
     background-color: #fff;
+    /*zaokrąglenie elementu*/
     border-radius: 4px;
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -232,7 +237,7 @@ img {
   .sidebar {
     flex-basis: 250px;
     margin-right: 24px;
-    flex-grow: 1;
+    flex-grow: 2;
   }
   
   .content {
