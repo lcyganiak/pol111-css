@@ -213,3 +213,55 @@ sda()
 function sda() {
     console.log("Fajny kurs")
 }
+
+const objekt = {
+    city: "Łódź",
+    club: "ŁKS"
+}
+
+class Club {
+    constructor(city, club) {
+        this.city = city
+        this.club = club
+        this.majsters = []
+    }
+    get fullName() {
+        return `${this.city} ${this.club}`
+    }
+    set majster(year) {
+        this.majsters.push(year)
+    }
+}
+
+const newClub = new Club("Poznań", "Lech")
+newClub.majster = 2022
+newClub.majster = 2023
+console.log(newClub)
+
+
+
+
+const person =   {
+    id: 1,
+    name: "Leanne Graham",
+    usernam: "Bret",
+    email: "Sincere@april.biz",
+    phone: "1-770-736-8031 x56442",
+    website: "hildegard.org",
+  }
+
+const keysPerson = Object.keys(person) // zwraca tablice stringów z kluczami podanego obiektu
+console.log(keysPerson)
+
+keysPerson.forEach(item => {
+    console.log(` moje ${item} to: ` + person[item])
+})
+
+keysPerson.includes('company')   // sprawdza czy klucz jest w tablicy stworzonej z kluczy objektu potrzebne wcześniejsze wykorzystanie Object.keys 
+
+person.hasOwnProperty('company') // bezpośrednio na objekcie sprawdza czy dany klucz jest
+
+Object.freeze(person)
+person.usernam = "Arlen" // zgłosi błąd. nie możemy manipulowac przy zamrozonym objekcie 
+
+Object.isFrozen(person) // zwraca true/false i sprawdza czy objekt jest freeze
