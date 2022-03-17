@@ -180,11 +180,22 @@ transition-duration: 2s; w przypadku zminy wyglądu na :hover czas przejścia b�
        
         
 }
+footer {
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(106,75,37,0.44021358543417366) 100%);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    text-align: center;
+}
+
+.list {
+    list-style: none;
+}
 /* cała zawartość ul z nasza nawigacją jest nie widoczna chyba że ekran 
 jest szerszy nic 670px*/
-.list {
+.main-nav .list {
     display: none;
 }
+
 /*@media (min-width: 680px) wszystko co jest w nawiasach klamrowych zrobi się na widokach 
 powyżej 680px szerokości */
 @media (min-width: 680px) {
@@ -202,7 +213,14 @@ powyżej 680px szerokości */
         font-size: 2rem;
         font-weight: 700;
     }
+    footer .list {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        
+    }
 }
+
+/* // kod wykonany powyżej bedzie wykonywał sie na najmnijszych rozdzielczościach */
 /*@media (min-width: 992px) wszystko co jest w nawiasach klamrowych zrobi się na widokach 
 powyżej 992px szerokości */
 @media (min-width: 992px) {
@@ -222,4 +240,12 @@ powyżej 992px szerokości */
         background-size: cover;
         position: relative;
     }
+}
+/*@media (min-width: 992px) wszystko co jest w nawiasach klamrowych zrobi się na widokach 
+powyżej 680px szerokości */
+@media (min-width: 680px) {
+
+}
+#desc-sql, #show-less-sql {
+    display: none;
 }

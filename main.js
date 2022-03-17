@@ -250,18 +250,85 @@ const person =   {
     website: "hildegard.org",
   }
 
-const keysPerson = Object.keys(person) // zwraca tablice stringów z kluczami podanego obiektu
-console.log(keysPerson)
+// const keysPerson = Object.keys(person) // zwraca tablice stringów z kluczami podanego obiektu
+// console.log(keysPerson)
 
-keysPerson.forEach(item => {
-    console.log(` moje ${item} to: ` + person[item])
-})
+// keysPerson.forEach(item => {
+//     console.log(` moje ${item} to: ` + person[item])
+// })
 
-keysPerson.includes('company')   // sprawdza czy klucz jest w tablicy stworzonej z kluczy objektu potrzebne wcześniejsze wykorzystanie Object.keys 
+// keysPerson.includes('company')   // sprawdza czy klucz jest w tablicy stworzonej z kluczy objektu potrzebne wcześniejsze wykorzystanie Object.keys 
 
-person.hasOwnProperty('company') // bezpośrednio na objekcie sprawdza czy dany klucz jest
+// person.hasOwnProperty('company') // bezpośrednio na objekcie sprawdza czy dany klucz jest
 
-Object.freeze(person)
-person.usernam = "Arlen" // zgłosi błąd. nie możemy manipulowac przy zamrozonym objekcie 
+// Object.freeze(person)
+// person.usernam = "Arlen" // zgłosi błąd. nie możemy manipulowac przy zamrozonym objekcie 
 
-Object.isFrozen(person) // zwraca true/false i sprawdza czy objekt jest freeze
+// Object.isFrozen(person) // zwraca true/false i sprawdza czy objekt jest freeze
+
+
+
+console.log(document)
+console.log(window.top)
+// pobranie el. z pliku html po ID
+const eleId = document.getElementById('skil-icon-id')
+console.log('po id', eleId)
+// zmina zawartości el. na stronie
+
+
+// pobranie el. z pliku html po class zwraca HTMLCollection
+const eleClass = document.getElementsByClassName('skil-icon')
+
+console.log('po class', eleClass)
+// po selektorze .skil-icon pobieramy pierwszy el. któy ma class="skil-icon" 
+const querySel = document.querySelector('.skil-icon')
+// po selektorze .skil-icon pobieramy wszystkie el. które mają class="skil-icon"  zwraca HTMLCollection
+const querySelAll = document.querySelectorAll('.skil-icon')
+
+
+//  HTMLCollection zmiana na zwukłą tablicę 
+const querySelAllToArray = Array.from(document.querySelectorAll('.skil-icon'))
+
+// tworzymy Paragraf
+const paragraf = document.createElement('p')
+// uzupełniamy tekst w paragrafie rozwiązanie bezpieczne
+// paragraf.innerText = "Jestem paragrafem dodanym przez JS"
+
+// uzupełniamy tekst w paragrafie rozwiązanie niebezpieczne!!!!!!!!!!
+paragraf.innerHTML = "<p class='xd'> Jestem paragrafem dodanym przez JS</p>"
+
+// dodajemy do dowolnego el. nasz paragraf. 
+querySelAllToArray[3].appendChild(paragraf)
+
+// pobranie button show more z sekcji SQL
+const showMoreSql = document.getElementById('show-more-sql')
+
+
+showMoreSql.addEventListener('click', showMoreAboutSql)
+
+function showMoreAboutSql() {
+    // pobieramy paragrafa z HTML, który jest ukryty przez css
+    const sql = document.getElementById('desc-sql')
+    // zminiamy css na widoczne 
+    sql.style.display = 'block'
+    // pobieramy przycisk do pokazywania szczegółów i go chowamy css 
+    const show = document.getElementById('show-more-sql')
+    show.style.display = 'none'
+
+    // pobieramy przycisk do chowania opisu i go pokazujemy 
+    const less = document.getElementById('show-less-sql')
+    less.style.display = 'block'
+}
+// przy evantach typu change, focus , input 
+// const telefon = document.getElementById('telefon').value
+
+// telefon.addEventListener('change', )
+
+
+
+// //    <!-- <label for="telefon">podaj swój numer tel a oddzwonię</label>
+// <input type="text" onchange="telefonValue(value)" id="telefon" > -->
+// drugi sposób podpinania eventów. powyżej kod z html wykomentowny 
+ function telefonValue(v) {
+     console.log(v)
+ }
